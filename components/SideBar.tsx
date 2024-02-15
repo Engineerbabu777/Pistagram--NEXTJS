@@ -22,7 +22,7 @@ export default function SideBar({}: Props) {
           {/* user && */}
           {/* <ProfileLink /> */}
 
-          <div>
+          <div className="hodden md:flex relative md:mt-auto flex-1 items-end w-full">
             {/* <MoreDropDown /> */}
           </div>
         </div>

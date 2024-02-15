@@ -4,6 +4,7 @@
 import React from 'react'
 import Logo from './Logo';
 import NavLinks from './NavLinks';
+import MoreDropdown from './MoreDropDown';
 
 type Props = {}
 
@@ -23,7 +24,7 @@ export default function SideBar({}: Props) {
           {/* <ProfileLink /> */}
 
           <div className="hodden md:flex relative md:mt-auto flex-1 items-end w-full">
-            {/* <MoreDropDown /> */}
+            <MoreDropdown />
           </div>
         </div>
     </div>

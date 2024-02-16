@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { updateProfile } from "@/lib/actions";
-import { UserWithExtras } from "@/lib/definitions";
+import { UserWithExtras } from "@/lib/definations";
 import { UserSchema } from "@/lib/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";

@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
-import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
-import { extractRouterConfig } from 'uploadthing/server';
-import { ourFileRouter } from './api/uploadthing/core';
+import { NextSSRPlugin } from '@uploadthing/react/next-ssr-plugin'
+import { extractRouterConfig } from 'uploadthing/server'
+import { ourFileRouter } from './api/uploadthing/core'
+import AuthProvider from '@/components/AuthProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -26,7 +27,8 @@ export default function RootLayout ({
           enableSystem
           disableTransitionOnChange
         >
-           <NextSSRPlugin
+          <AuthProvider>
+            <NextSSRPlugin
               /**
                * The `extractRouterConfig` will extract **only** the route configs
                * from the router to prevent additional information from being
@@ -35,7 +37,8 @@ export default function RootLayout ({
                */
               routerConfig={extractRouterConfig(ourFileRouter)}
             />
-          {children}
+            {children}
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
